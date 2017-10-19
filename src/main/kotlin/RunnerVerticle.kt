@@ -4,7 +4,6 @@ import fstn.vertxFlow.core.dynamic.MessageBody
 import fstn.vertxFlow.core.vertx.helper.RouterFactory
 import io.vertx.core.Handler
 import io.vertx.core.json.JsonObject
-import io.vertx.ext.web.handler.sockjs.PermittedOptions
 import io.vertx.rxjava.core.AbstractVerticle
 import io.vertx.rxjava.core.Vertx
 import io.vertx.rxjava.core.eventbus.Message
@@ -59,7 +58,7 @@ class EventSimulatortHandler(val vertx: Vertx) : Handler<Message<JsonObject>> {
 
 class FBHandler : Handler<Message<MessageBody>> {
     override fun handle(message: Message<MessageBody>) {
-        print(message.body() as MessageBody)
+        print("Test cast ${message.body()}")
     }
 }
 
